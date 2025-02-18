@@ -188,16 +188,19 @@ function HomePage() {
               name="Rahul Sharma"
               role="CEO, Tech Innovators"
               testimonial="The Webloom transformed our online presence. Their team is highly professional and delivered beyond our expectations."
+              image="https://i.pravatar.cc/100?img=1"
             />
             <TestimonialCard
               name="Priya Patel"
               role="Founder, Green Earth"
               testimonial="We saw a significant increase in our website traffic after working with The Webloom. Highly recommend their SEO services."
+              image="https://i.pravatar.cc/100?img=2"
             />
             <TestimonialCard
               name="Vikram Singh"
               role="Marketing Head, Urban Fit"
               testimonial="Their digital marketing strategies helped us reach a wider audience and boost our sales."
+              image="https://i.pravatar.cc/100?img=3"
             />
           </div>
         </div>
@@ -300,16 +303,19 @@ function TestimonialsPage() {
             name="Rahul Sharma"
             role="CEO, Tech Innovators"
             testimonial="The Webloom transformed our online presence. Their team is highly professional and delivered beyond our expectations."
+            image="https://i.pravatar.cc/100?img=1"
           />
           <TestimonialCard
             name="Priya Patel"
             role="Founder, Green Earth"
             testimonial="We saw a significant increase in our website traffic after working with The Webloom. Highly recommend their SEO services."
+            image="https://i.pravatar.cc/100?img=2"
           />
           <TestimonialCard
             name="Vikram Singh"
             role="Marketing Head, Urban Fit"
             testimonial="Their digital marketing strategies helped us reach a wider audience and boost our sales."
+            image="https://i.pravatar.cc/100?img=3"
           />
         </div>
       </div>
@@ -326,22 +332,22 @@ function TeamPage() {
           <TeamMemberCard
             name="Siddharth Perkar"
             role="CEO & Cofounder"
-            icon={<User className="w-8 h-8" />}
+            icon={<User  className="w-8 h-8" />}
           />
           <TeamMemberCard
             name="Abhishek Pawar"
             role="CTO & Cofounder"
-            icon={<User className="w-8 h-8" />}
+            icon={<User  className="w-8 h-8" />}
           />
           <TeamMemberCard
             name="Darshan Mali"
             role="CMO & Cofounder"
-            icon={<User className="w-8 h-8" />}
+            icon={<User  className="w-8 h-8" />}
           />
           <TeamMemberCard
             name="Samarth Kuwar"
             role="CIO & Cofounder"
-            icon={<User className="w-8 h-8" />}
+            icon={<User  className="w-8 h-8" />}
           />
         </div>
       </div>
@@ -457,14 +463,16 @@ function BlogCard({ title, description, icon }) {
   );
 }
 
-function TestimonialCard({ name, role, testimonial }) {
+function TestimonialCard({ name, role, testimonial, image }) {
   return (
     <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-      <div className="text-purple-600 mb-4">
-        <ThumbsUp className="w-8 h-8" />
+      <div className="flex items-center mb-4">
+        <img src={image} alt={name} className="w-12 h-12 rounded-full mr-4" />
+        <div>
+          <h3 className="text-xl font-semibold">{name}</h3>
+          <p className="text-gray-600 font-semibold">{role}</p>
+        </div>
       </div>
-      <h3 className="text-xl font-semibold mb-2">{name}</h3>
-      <p className="text-gray-600 font-semibold mb-2">{role}</p>
       <p className="text-gray-600">{testimonial}</p>
     </div>
   );
