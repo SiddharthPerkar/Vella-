@@ -130,7 +130,7 @@ function HomePage() {
               The loom
             </h1>
             <p className="text-xl max-w-2xl mx-auto mb-8">
-              We specialize in creating stunning websites, optimizing for search engines, and delivering digital marketing strategies that drive results.
+            tes, optimizing for search engines, and delivering digital marketing strategies that drive results.
             </p>
             <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
               Get Started <ArrowRight className="w-5 h-5" />
