@@ -127,7 +127,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-5xl font-bold tracking-tight mb-6">
-              Transform Your Digital Presence with The Webloom
+              The loom
             </h1>
             <p className="text-xl max-w-2xl mx-auto mb-8">
               We specialize in creating stunning websites, optimizing for search engines, and delivering digital marketing strategies that drive results.
