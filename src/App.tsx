@@ -127,10 +127,10 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-5xl font-bold tracking-tight mb-6">
-              The loom
+              Transform Your Digital Presence with The Webloom
             </h1>
             <p className="text-xl max-w-2xl mx-auto mb-8">
-            tes, optimizing for search engines, and delivering digital marketing strategies that drive results.
+              We specialize in creating stunning websites, optimizing for search engines, and delivering digital marketing strategies that drive results.
             </p>
             <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
               Get Started <ArrowRight className="w-5 h-5" />
@@ -149,61 +149,31 @@ function HomePage() {
               icon={<Globe className="w-8 h-8" />}
               title="Web Design"
               description="Modern, responsive websites that make a lasting impression."
-              bulletPoints={[
-                "Custom designs tailored to your brand.",
-                "Mobile-friendly and responsive layouts.",
-                "User  experience focused design."
-              ]}
             />
             <ServiceCard
               icon={<Code2 className="w-8 h-8" />}
               title="Web Development"
               description="Custom websites built with the latest technologies."
-              bulletPoints={[
-                "Robust and scalable web applications.",
-                "Integration with various APIs.",
-                "Ongoing support and maintenance."
-              ]}
             />
             <ServiceCard
               icon={<Rocket className="w-8 h-8" />}
               title="SEO Optimization"
               description="Improve your visibility in search results."
-              bulletPoints={[
-                "Keyword research and analysis.",
-                "On-page and off-page SEO strategies.",
-                "Performance tracking and reporting."
-              ]}
             />
             <ServiceCard
               icon={<Palette className="w-8 h-8" />}
               title="Brand Strategy"
               description="Build a brand that connects with your audience."
-              bulletPoints={[
-                "Comprehensive brand audits.",
-                "Target audience identification.",
-                "Creative brand messaging."
-              ]}
             />
             <ServiceCard
               icon={<Zap className="w-8 h-8" />}
               title="Digital Marketing"
               description="Smart marketing strategies for the digital world."
-              bulletPoints={[
-                "Social media marketing campaigns.",
-                "Email marketing strategies.",
-                "Content marketing and strategy."
-              ]}
             />
             <ServiceCard
               icon={<MessageSquare className="w-8 h-8" />}
               title="Social Media"
               description="Engage and grow your social media presence."
-              bulletPoints={[
-                "Content creation and curation.",
-                "Community management.",
-                "Analytics and performance tracking."
-              ]}
             />
           </div>
         </div>
@@ -250,17 +220,45 @@ function HomePage() {
     </>
   );
 }
-function ServiceCard({ icon, title, description, bulletPoints }) {
+
+function ServicesPage() {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-      <div className="text-purple-600 mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <ul className="list-disc list-inside text-gray-600">
-        {bulletPoints.map((point, index) => (
-          <li key={index}>{point}</li>
-        ))}
-      </ul>
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ServiceCard
+            icon={<Globe className="w-8 h-8" />}
+            title="Web Design"
+            description="Modern, responsive websites that make a lasting impression."
+          />
+          <ServiceCard
+            icon={<Code2 className="w-8 h-8" />}
+            title="Web Development"
+            description="Custom websites built with the latest technologies."
+          />
+          <ServiceCard
+            icon={<Rocket className="w-8 h-8" />}
+            title="SEO Optimization"
+            description="Improve your visibility in search results."
+          />
+          <ServiceCard
+            icon={<Palette className="w-8 h-8" />}
+            title="Brand Strategy"
+            description="Build a brand that connects with your audience."
+          />
+          <ServiceCard
+            icon={<Zap className="w-8 h-8" />}
+            title="Digital Marketing"
+            description="Smart marketing strategies for the digital world."
+          />
+          <ServiceCard
+            icon={<MessageSquare className="w-8 h-8" />}
+            title="Social Media"
+            description="Engage and grow your social media presence."
+          />
+        </div>
+      </div>
     </div>
   );
 }
