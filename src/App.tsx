@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code2, Rocket, Palette, MessageSquare, ArrowRight, Globe, Zap, Users, Mail, Phone, MapPin, Check } from 'lucide-react';
+import { Code2, Rocket, Palette, MessageSquare, ArrowRight, Globe, Zap, Users, Mail, Phone, MapPin, Check, User, BookOpen, ThumbsUp } from 'lucide-react';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -8,8 +8,14 @@ function App() {
     switch(currentPage) {
       case 'contact':
         return <ContactPage />;
-      case 'pricing':
-        return <PricingPage />;
+      case 'services':
+        return <ServicesPage />;
+      case 'blog':
+        return <BlogPage />;
+      case 'testimonials':
+        return <TestimonialsPage />;
+      case 'team':
+        return <TeamPage />;
       default:
         return <HomePage />;
     }
@@ -21,7 +27,7 @@ function App() {
       <nav className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
-            <div className="text-xl font-bold text-purple-600">DigitalCraft</div>
+            <div className="text-xl font-bold text-purple-600">The Webloom</div>
             <div className="flex gap-6">
               <button 
                 onClick={() => setCurrentPage('home')}
@@ -30,10 +36,28 @@ function App() {
                 Home
               </button>
               <button 
-                onClick={() => setCurrentPage('pricing')}
-                className={`${currentPage === 'pricing' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
+                onClick={() => setCurrentPage('services')}
+                className={`${currentPage === 'services' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
               >
-                Pricing
+                Services
+              </button>
+              <button 
+                onClick={() => setCurrentPage('blog')}
+                className={`${currentPage === 'blog' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
+              >
+                Blog
+              </button>
+              <button 
+                onClick={() => setCurrentPage('testimonials')}
+                className={`${currentPage === 'testimonials' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
+              >
+                Testimonials
+              </button>
+              <button 
+                onClick={() => setCurrentPage('team')}
+                className={`${currentPage === 'team' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
+              >
+                Our Team
               </button>
               <button 
                 onClick={() => setCurrentPage('contact')}
@@ -53,9 +77,9 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">DigitalCraft</h3>
+              <h3 className="text-xl font-bold mb-4">The Webloom</h3>
               <p className="text-gray-400">
-                Fresh perspectives, innovative solutions.
+                Transform your digital presence with The Webloom.
               </p>
             </div>
             <div>
@@ -87,207 +111,10 @@ function App() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 DigitalCraft. All rights reserved.</p>
+            <p>&copy; 2024 The Webloom. All rights reserved.</p>
           </div>
         </div>
       </footer>
-    </div>
-  );
-}
-
-function PricingPage() {
-  return (
-    <div className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Simple, Transparent Pricing</h1>
-          <p className="text-xl text-gray-600">Choose the perfect plan for your business needs</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 perspective-1000">
-          {/* Basic Plan */}
-          <div className="transform-style-3d hover:rotate-y-5 transition-transform duration-300">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Starter</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">$999</span>
-                  <span className="text-gray-600">/project</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>5-page Website</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Mobile Responsive</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Contact Form</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Basic SEO Setup</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors">
-                  Get Started
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Pro Plan */}
-          <div className="transform-style-3d hover:rotate-y-5 transition-transform duration-300">
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl shadow-xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-              <div className="p-8 text-white">
-                <div className="absolute top-4 right-4 bg-white text-purple-600 px-3 py-1 rounded-full text-sm font-semibold">
-                  Popular
-                </div>
-                <h3 className="text-2xl font-bold mb-4">Professional</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">$2,499</span>
-                  <span className="opacity-80">/project</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5" />
-                    <span>10-page Custom Website</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5" />
-                    <span>Advanced Design</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5" />
-                    <span>CMS Integration</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5" />
-                    <span>Advanced SEO Package</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5" />
-                    <span>Social Media Integration</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-white text-purple-600 py-3 rounded-lg hover:bg-gray-100 transition-colors">
-                  Get Started
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Enterprise Plan */}
-          <div className="transform-style-3d hover:rotate-y-5 transition-transform duration-300">
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold">Custom</span>
-                  <span className="text-gray-600">/project</span>
-                </div>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Unlimited Pages</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Custom Functionality</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>E-commerce Integration</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Custom Analytics</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-500" />
-                    <span>Priority Support</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors">
-                  Contact Us
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 3D Features Section */}
-        <div className="mt-24">
-          <h2 className="text-3xl font-bold text-center mb-16">All Plans Include</h2>
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="group perspective-1000">
-              <div className="relative transform-style-3d group-hover:rotate-y-180 transition-transform duration-1000 h-64">
-                <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6">
-                  <div className="text-purple-600 mb-4">
-                    <Globe className="w-12 h-12" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Domain & Hosting</h3>
-                  <p className="text-gray-600">Free domain and hosting setup for the first year</p>
-                </div>
-                <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl shadow-lg p-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">Includes:</h3>
-                  <ul className="space-y-2">
-                    <li>• Domain Registration</li>
-                    <li>• SSL Certificate</li>
-                    <li>• Cloud Hosting</li>
-                    <li>• 24/7 Support</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="group perspective-1000">
-              <div className="relative transform-style-3d group-hover:rotate-y-180 transition-transform duration-1000 h-64">
-                <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6">
-                  <div className="text-purple-600 mb-4">
-                    <Rocket className="w-12 h-12" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">SEO Optimization</h3>
-                  <p className="text-gray-600">Basic SEO setup to help your site rank better</p>
-                </div>
-                <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl shadow-lg p-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">Includes:</h3>
-                  <ul className="space-y-2">
-                    <li>• Keyword Research</li>
-                    <li>• Meta Tags</li>
-                    <li>• Site Structure</li>
-                    <li>• Performance Optimization</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="group perspective-1000">
-              <div className="relative transform-style-3d group-hover:rotate-y-180 transition-transform duration-1000 h-64">
-                <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6">
-                  <div className="text-purple-600 mb-4">
-                    <MessageSquare className="w-12 h-12" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Support</h3>
-                  <p className="text-gray-600">Dedicated support to help you succeed</p>
-                </div>
-                <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl shadow-lg p-6 text-white">
-                  <h3 className="text-xl font-semibold mb-2">Includes:</h3>
-                  <ul className="space-y-2">
-                    <li>• Email Support</li>
-                    <li>• Video Tutorials</li>
-                    <li>• Documentation</li>
-                    <li>• Monthly Check-ins</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
@@ -300,10 +127,10 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-5xl font-bold tracking-tight mb-6">
-              Fresh Ideas for the Digital Age
+              Transform Your Digital Presence with The Webloom
             </h1>
             <p className="text-xl max-w-2xl mx-auto mb-8">
-              We're a young, dynamic team bringing innovative web design and digital marketing solutions to help your business stand out.
+              We specialize in creating stunning websites, optimizing for search engines, and delivering digital marketing strategies that drive results.
             </p>
             <button className="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
               Get Started <ArrowRight className="w-5 h-5" />
@@ -352,30 +179,25 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Testimonials Section */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Us</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We bring fresh perspectives and innovative solutions to every project, combining creativity with technical expertise.
-            </p>
-          </div>
+          <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <FeatureCard
-              number="2+"
-              title="Years Experience"
-              description="Young, passionate, and dedicated to excellence"
+            <TestimonialCard
+              name="Rahul Sharma"
+              role="CEO, Tech Innovators"
+              testimonial="The Webloom transformed our online presence. Their team is highly professional and delivered beyond our expectations."
             />
-            <FeatureCard
-              number="25+"
-              title="Projects Completed"
-              description="Growing portfolio of successful projects"
+            <TestimonialCard
+              name="Priya Patel"
+              role="Founder, Green Earth"
+              testimonial="We saw a significant increase in our website traffic after working with The Webloom. Highly recommend their SEO services."
             />
-            <FeatureCard
-              number="100%"
-              title="Client Focus"
-              description="Your success is our priority"
+            <TestimonialCard
+              name="Vikram Singh"
+              role="Marketing Head, Urban Fit"
+              testimonial="Their digital marketing strategies helped us reach a wider audience and boost our sales."
             />
           </div>
         </div>
@@ -396,6 +218,134 @@ function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function ServicesPage() {
+  return (
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ServiceCard
+            icon={<Globe className="w-8 h-8" />}
+            title="Web Design"
+            description="Modern, responsive websites that make a lasting impression."
+          />
+          <ServiceCard
+            icon={<Code2 className="w-8 h-8" />}
+            title="Web Development"
+            description="Custom websites built with the latest technologies."
+          />
+          <ServiceCard
+            icon={<Rocket className="w-8 h-8" />}
+            title="SEO Optimization"
+            description="Improve your visibility in search results."
+          />
+          <ServiceCard
+            icon={<Palette className="w-8 h-8" />}
+            title="Brand Strategy"
+            description="Build a brand that connects with your audience."
+          />
+          <ServiceCard
+            icon={<Zap className="w-8 h-8" />}
+            title="Digital Marketing"
+            description="Smart marketing strategies for the digital world."
+          />
+          <ServiceCard
+            icon={<MessageSquare className="w-8 h-8" />}
+            title="Social Media"
+            description="Engage and grow your social media presence."
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BlogPage() {
+  return (
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Blog</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <BlogCard
+            title="Top 5 Web Design Trends in 2024"
+            description="Discover the latest trends in web design that will dominate 2024."
+            icon={<BookOpen className="w-8 h-8" />}
+          />
+          <BlogCard
+            title="How SEO Can Transform Your Business"
+            description="Learn how SEO can help your business reach new heights."
+            icon={<Rocket className="w-8 h-8" />}
+          />
+          <BlogCard
+            title="The Importance of Social Media Marketing"
+            description="Find out why social media marketing is crucial for your brand."
+            icon={<MessageSquare className="w-8 h-8" />}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TestimonialsPage() {
+  return (
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          <TestimonialCard
+            name="Rahul Sharma"
+            role="CEO, Tech Innovators"
+            testimonial="The Webloom transformed our online presence. Their team is highly professional and delivered beyond our expectations."
+          />
+          <TestimonialCard
+            name="Priya Patel"
+            role="Founder, Green Earth"
+            testimonial="We saw a significant increase in our website traffic after working with The Webloom. Highly recommend their SEO services."
+          />
+          <TestimonialCard
+            name="Vikram Singh"
+            role="Marketing Head, Urban Fit"
+            testimonial="Their digital marketing strategies helped us reach a wider audience and boost our sales."
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TeamPage() {
+  return (
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
+        <div className="grid md:grid-cols-4 gap-8">
+          <TeamMemberCard
+            name="Siddharth Perkar"
+            role="CEO & Cofounder"
+            icon={<User className="w-8 h-8" />}
+          />
+          <TeamMemberCard
+            name="Abhishek Pawar"
+            role="CTO & Cofounder"
+            icon={<User className="w-8 h-8" />}
+          />
+          <TeamMemberCard
+            name="Darshan Mali"
+            role="CMO & Cofounder"
+            icon={<User className="w-8 h-8" />}
+          />
+          <TeamMemberCard
+            name="Samarth Kuwar"
+            role="CIO & Cofounder"
+            icon={<User className="w-8 h-8" />}
+          />
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -462,7 +412,7 @@ function ContactPage() {
                 <Mail className="w-6 h-6" />
               </div>
               <h3 className="font-semibold mb-2">Email</h3>
-              <p className="text-gray-600">hello@digitalcraft.com</p>
+              <p className="text-gray-600">hello@thewebloom.com</p>
             </div>
             
             <div className="text-center">
@@ -497,12 +447,35 @@ function ServiceCard({ icon, title, description }) {
   );
 }
 
-function FeatureCard({ number, title, description }) {
+function BlogCard({ title, description, icon }) {
   return (
-    <div className="bg-white p-8 rounded-xl shadow-lg text-center">
-      <div className="text-4xl font-bold text-purple-600 mb-2">{number}</div>
+    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+      <div className="text-purple-600 mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>
+    </div>
+  );
+}
+
+function TestimonialCard({ name, role, testimonial }) {
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+      <div className="text-purple-600 mb-4">
+        <ThumbsUp className="w-8 h-8" />
+      </div>
+      <h3 className="text-xl font-semibold mb-2">{name}</h3>
+      <p className="text-gray-600 font-semibold mb-2">{role}</p>
+      <p className="text-gray-600">{testimonial}</p>
+    </div>
+  );
+}
+
+function TeamMemberCard({ name, role, icon }) {
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+      <div className="text-purple-600 mb-4">{icon}</div>
+      <h3 className="text-xl font-semibold mb-2">{name}</h3>
+      <p className="text-gray-600">{role}</p>
     </div>
   );
 }
