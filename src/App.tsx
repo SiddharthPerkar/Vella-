@@ -16,6 +16,8 @@ function App() {
         return <TestimonialsPage />;
       case 'team':
         return <TeamPage />;
+      case 'careers':
+        return <CareerPage />;
       default:
         return <HomePage />;
     }
@@ -58,6 +60,12 @@ function App() {
                 className={`${currentPage === 'team' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
               >
                 Our Team
+              </button>
+              <button 
+                onClick={() => setCurrentPage('careers')}
+                className={`${currentPage === 'careers' ? 'text-purple-600' : 'text-gray-600'} hover:text-purple-600`}
+              >
+                Careers
               </button>
               <button 
                 onClick={() => setCurrentPage('contact')}
@@ -332,25 +340,54 @@ function TeamPage() {
           <TeamMemberCard
             name="Siddharth Perkar"
             role="CEO & Cofounder"
-            icon={<User  className="w-8 h-8" />}
+            icon={<User   className="w-8 h-8" />}
           />
           <TeamMemberCard
             name="Abhishek Pawar"
             role="CTO & Cofounder"
-            icon={<User  className="w-8 h-8" />}
+            icon={<User   className="w-8 h-8" />}
           />
           <TeamMemberCard
             name="Darshan Mali"
             role="CMO & Cofounder"
-            icon={<User  className="w-8 h-8" />}
+            icon={<User   className="w-8 h-8" />}
           />
           <TeamMemberCard
             name="Samarth Kuwar"
             role="CIO & Cofounder"
-            icon={<User  className="w-8 h-8" />}
+            icon={<User   className="w-8 h-8" />}
           />
         </div>
       </div>
+    </div>
+  );
+}
+
+function CareerPage() {
+  return (
+    <div className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-12">Current Openings</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <CareerCard title="Web Developer Intern" />
+          <CareerCard title="App Developer Intern" />
+          <CareerCard title="Content Creator" />
+          <CareerCard title="Video Creator" />
+          <CareerCard title="Graphic Designer Intern" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CareerCard({ title }) {
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-600">Join our team and help us create amazing digital experiences!</p>
+      <button className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition-colors">
+        Apply Now
+      </button>
     </div>
   );
 }
